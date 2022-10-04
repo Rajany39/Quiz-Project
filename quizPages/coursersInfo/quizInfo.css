@@ -1,0 +1,33 @@
+body{
+        background: #bdc3c7;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    h2{
+        color:orange;
+    }
+
+    .design{
+        margin:5cm 0cm 0cm 8cm;
+
+    
+        width: 60%;
+    }
+
+    #table{
+        width: 80%;
+    }
+
+    td{
+        text-align: center;
+        font-family:fantasy;
+        font-size: large;
+    }
+
+    input{
+        margin-left: 7cm;
+        background-color: green;
+        border-radius: .5cm;
+        padding: 8px;
+    }

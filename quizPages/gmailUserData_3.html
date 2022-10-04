@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credentials Page</title>
+    <link rel="stylesheet" href="gmailUserData_3.css">
+</head>
+<body>
+    <marquee style="color: red;font-size: xx-large"> Remember your Credentials it is required for further login</marquee>
+    <h1>Check your Credentials Details</h1>  
+<div class="login">    
+    <form action="login_4.html">    
+        <label><b>User Id:-</b>    
+        </label>   
+        <span id="name"></span><br><br>    
+        <label><b>Password:-     
+        </b>    
+        </label>  
+        <span id="password"></span>  
+        <br><br><input type="submit" name="submit" id="submit" value="Click Processed to login">
+    </form>
+    <button  onclick="copyToClipboard('password')" class="copy">Copy password</button>
+  
+</div>
+    
+    <script>
+
+        function getParameter(){
+          let parameters=new URLSearchParams(window.location.search);
+          return parameters.get('name');
+        }
+  
+        let username=getParameter();
+  
+        function randomString(name,count,idMessage) {
+        var characters =name;
+              
+              //specify the length for the new string
+          var lenString = count;
+          var randomstring = '';
+  
+              //loop to select a new character in each iteration
+          for (var i=0; i<lenString; i++) {
+              var rnum = Math.floor(Math.random() * characters.length);
+                randomstring += characters.substring(rnum, rnum+1);
+          }
+  
+               //display the generated string 
+      document.getElementById(idMessage).innerHTML = randomstring;
+      return randomstring;
+    
+      }
+  
+      var uId=randomString(username,5,"name");
+      var pass=randomString(username,15,"password");
+  
+      sessionStorage.setItem("username",uId);
+      sessionStorage.setItem("password",pass);
+  
+    function copyToClipboard(id)
+  {
+  var r = document.createRange();
+  r.selectNode(document.getElementById(id));
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(r);
+  document.execCommand('copy');
+  window.getSelection().removeAllRanges();
+  }
+  </script>
+</body>
+</html>

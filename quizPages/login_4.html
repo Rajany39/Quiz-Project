@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login_4.css">
+</head>
+<body>
+  <h1>LOGIN NOW</h1>  
+  <div class="login">
+
+
+      <form onsubmit="return loginValidation()" action="/homepage_5/homepage_5.html" id="reset">
+        <span id="gadha" style="color:red" ></span><br>
+        
+        <label for="user">User ID:</label>   
+          <input type="text" name="name" id="name" required autocomplete="off" placeholder="Enter your User Id " >
+          <span id="namepassword" style="color:red"></span>
+          <br><br>   
+          <label for="pass">Password :</label>
+          <input type="password" id="password" name="password" required autocomplete="off" placeholder="Enter your copied password" >
+          <span id="passwordname" style="color: red" ></span>
+          <br>
+          <br><br><button type="submit" id="submit">LOGIN</button>
+        </form>
+        <button onclick="reset()" class="copy" >RESET</button>
+    </div>
+    <script>
+      function reset(){
+          document.getElementById("reset").reset();
+      }
+
+
+      var a=sessionStorage.getItem("username");
+      var b=sessionStorage.getItem("password");
+        
+      function loginValidation(){
+
+          var name=document.getElementById('name').value;
+          var pass=document.getElementById('password').value;
+          if(name==a){
+              if(pass==b){
+
+              }
+              else{
+                  document.getElementById('passwordname').innerHTML="Invalid Password!!!";
+                  return false;
+              }
+
+          }
+          else
+          {
+              if(pass==b){
+                  document.getElementById('namepassword').innerHTML="Invalid UserId!!!";
+                  return false;
+            
+              }
+              else{
+                  document.getElementById('gadha').innerHTML="Invalid UserId and Password!!!";
+                  return false;
+            
+
+              }
+          }
+      }
+      
+      
+  </script>
+</body>
+</html>

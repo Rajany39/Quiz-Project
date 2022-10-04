@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="gmail_2.css">
+</head>
+<body>
+    <h1>Register Here</h1>   
+<!-- <div class="login">     -->
+    <form onsubmit="return fun()" class="login"  method="get" action="gmailUserData_3.html">    
+        <label><b>Name</b>    
+        </label> <br>   
+        <input type="text" name="name" id="name" placeholder="Enter your name here......." autocomplete="off" required>
+        <span id="message" style="color:red"></span>    
+        <br><br>    
+        <label><b>Gmail     
+        </b>    
+        </label><br>  
+        <input type="email" name="email" id="email" placeholder="Enter your gmail here" required >    
+        <br><br><br>    
+        <input type="submit" name="submit" id="submit" value="Create Account">       
+         
+            
+    </form>
+    <script type="text/javascript">
+        var username=document.getElementById("name");
+       function fun(){
+                  var a=document.getElementById('name').value;
+                  var correct=/^[A-Za-z]/;
+                
+                 if(a.match(correct))
+                    {                               
+                    }  
+                 else
+                 {
+                     document.getElementById('message').innerHTML="**Number not allowed***";
+                     return false;              
+                 }
+
+                 if(a.length>=5){
+               }
+                 else{
+                   document.getElementById('message').innerHTML="**Minimum 5 character allowed***";
+                     return false;  
+
+                 }
+                 if(a!==null){document.getElementById('message').innerHTML="";}
+
+                 
+       }
+               </script>
+</body>
+</html>
